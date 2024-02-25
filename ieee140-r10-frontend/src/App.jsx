@@ -1,8 +1,17 @@
 import './App.css'
+import LandingPage from '../components/Landing'
+import Login from '../components/Login'
+import SignUpChoice from '../components/SignUpChoice'
+import SignUp from '../components/SignUp'
 
 function App() {
   return(
-    <h1>IEEE 140</h1>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/" element={<LandingPage />} />
+    </Routes>
   )
 }
 
