@@ -6,9 +6,9 @@ const FAQ = () => {
         <>
             <h1>For Queries</h1>
             <div className="glassWrapper-Query">
-                <input type="text" placeholder="Full Name" />
-                <input type="text" placeholder="Email" />
-                <textarea placeholder="Query" />
+                <input type="text" placeholder="  Full Name" />
+                <input type="text" placeholder="  Email" />
+                <textarea placeholder=" Query" />
                 <button>Submit</button>
             </div>
             <br/><br/>

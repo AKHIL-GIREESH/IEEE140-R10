@@ -4,19 +4,30 @@
     height:40vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1vh;
 }
 
 textarea, input{
     background-color: white;
     border: none;
     border-radius: 10px;
+    width: 90%;
 }
 
 input{
-    height: 10%;
+    height: 12%;
+
 }
 
 textarea{
-    height: 40%;
+    height: 43%;
+}
+
+.glassWrapper-Query button{
+    color: white;
+    background-color: #0073DD;
+    width: 25%;
 }
