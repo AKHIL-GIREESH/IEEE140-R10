@@ -5,7 +5,7 @@ import Login from '../components/Login'
 import SignUpChoice from '../components/SignUpChoice'
 import SignUp from '../components/SignUp'
 import Profile from '../components/Profile'
-import FAQ from '../components/FAQ'
+import FAQ from '../components/FAQ/FAQ'
 
 function App() {
   return(

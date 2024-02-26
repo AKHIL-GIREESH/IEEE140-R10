@@ -1,0 +1,22 @@
+.glassWrapper-Query{
+    border: 1px solid white;
+    width:50%;
+    height:40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+textarea, input{
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+input{
+    height: 10%;
+}
+
+textarea{
+    height: 40%;
+}
