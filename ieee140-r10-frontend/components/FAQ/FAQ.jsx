@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { FAQdata } from "../../mocks/FAQ"
+import { IoIosArrowDown } from "react-icons/io";
 import './FAQ.css'
 
 const FAQ = () => {
@@ -23,7 +24,12 @@ const FAQ = () => {
                 FAQdata.map(({id,Q,A}) => {
                     return(
                         <div className="glassWrapper-FAQ" key={id} onClick={() => currentFAQ === id?setCurrentFAQ(-1):setCurrentFAQ(id)} style={{height:currentFAQ === id?"20vh":"8vh"}}>
-                            <div>{Q}<button></button></div>
+                            <div style={{fontSize:"1.3rem",fontWeight:600,display:"flex",alignItems:"center"}}>
+                                <div style={{width:"95%"}}>
+                                    {Q}
+                                </div>
+                            <IoIosArrowDown />
+                            </div>
                             {currentFAQ === id && <div>{A}</div>}
                         </div>
                     )
