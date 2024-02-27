@@ -1,16 +1,13 @@
+import { MdRadioButtonChecked } from "react-icons/md"; //ticked
+import { MdRadioButtonUnchecked } from "react-icons/md";
+
 const SignUpChoice = () => {
     return(
         <div>
             <h1>Choose your Category</h1>
             <div>
-            <label>
-                <input type="radio"/>
-                IEEE
-            </label>
-            <label>
-                <input type="radio"/>
-                Non-IEEE
-            </label>
+                <MdRadioButtonChecked style={{color:"#0073DD"}}/>
+                <MdRadioButtonUnchecked/>
             </div>
             
         </div>
