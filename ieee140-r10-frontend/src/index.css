@@ -13,7 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+body{
+  margin:0;
+  padding: 0;
+}
+
+/* a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
@@ -65,4 +70,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

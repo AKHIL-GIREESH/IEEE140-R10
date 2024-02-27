@@ -24,7 +24,7 @@ textarea, input{
     background-color: white;
     border: none;
     border-radius: 10px;
-    width: 90%;
+    width: 95%;
 }
 
 input{
@@ -37,7 +37,10 @@ textarea{
 }
 
 .glassWrapper-Query button{
+    border: none;
     color: white;
     background-color: #0073DD;
     width: 25%;
+    height: 12%;
+    border-radius: 6px;
 }

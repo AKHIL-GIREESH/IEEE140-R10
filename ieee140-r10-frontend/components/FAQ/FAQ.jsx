@@ -7,7 +7,8 @@ const FAQ = () => {
     const [currentFAQ,setCurrentFAQ] = useState(false)
 
     return(
-        <>
+        //debugging
+        <div style={{border:"1px solid",width:"100vw"}}>
             <h2>For Queries</h2>
             <div className="glassWrapper-Query">
                 <input type="text" placeholder="  Full Name" />
@@ -22,7 +23,7 @@ const FAQ = () => {
                 FAQdata.map(({id,Q,A}) => {
                     return(
                         <div className="glassWrapper-FAQ" key={id} onClick={() => currentFAQ === id?setCurrentFAQ(-1):setCurrentFAQ(id)} style={{height:currentFAQ === id?"20vh":"8vh"}}>
-                            <div>{Q}</div>
+                            <div>{Q}<button></button></div>
                             {currentFAQ === id && <div>{A}</div>}
                         </div>
                     )
@@ -30,7 +31,7 @@ const FAQ = () => {
             
             }
 
-        </>
+        </div>
     )
 }
 
