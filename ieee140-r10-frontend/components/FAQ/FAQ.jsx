@@ -1,10 +1,14 @@
+import { useState } from "react"
 import { FAQdata } from "../../mocks/FAQ"
 import './FAQ.css'
 
 const FAQ = () => {
+
+    const [currentFAQ,setCurrentFAQ] = useState(false)
+
     return(
         <>
-            <h1>For Queries</h1>
+            <h2>For Queries</h2>
             <div className="glassWrapper-Query">
                 <input type="text" placeholder="  Full Name" />
                 <input type="text" placeholder="  Email" />
@@ -12,14 +16,14 @@ const FAQ = () => {
                 <button>Submit</button>
             </div>
             <br/><br/>
-            <h1>FAQ</h1>
+            <h2>FAQ</h2>
 
             {
                 FAQdata.map(({id,Q,A}) => {
                     return(
-                        <div className="glassWrapper-FAQ" key={id}>
-                            <p>{Q}</p>
-                            <p>{A}</p>
+                        <div className="glassWrapper-FAQ" key={id} onClick={() => currentFAQ === id?setCurrentFAQ(-1):setCurrentFAQ(id)} style={{height:currentFAQ === id?"20vh":"8vh"}}>
+                            <div>{Q}</div>
+                            {currentFAQ === id && <div>{A}</div>}
                         </div>
                     )
                 })
