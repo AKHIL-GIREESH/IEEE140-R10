@@ -1,0 +1,10 @@
+.glassWrapper-SignUp{
+    height:80vh;
+    border: 1px solid white;
+    width:50vw;
+    border-radius: 15px;
+}
+
+.glassWrapper-SignUp input{
+    height: 8%;
+}
