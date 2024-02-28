@@ -2,7 +2,7 @@ import './SignUp.css'
 
 const SignUp = () => {
     return(
-        <div>
+        <div style={{marginLeft:"25vw"}}>
             <h1>Create an Account</h1>
             <div className="glassWrapper-SignUp">
                 <input type="text" placeholder="  Full Name" />
