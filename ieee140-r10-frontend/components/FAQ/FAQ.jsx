@@ -9,7 +9,7 @@ const FAQ = () => {
 
     return(
         //debugging
-        <div style={{border:"1px solid",width:"100vw"}}>
+        <div className="fullScreenDivContainer">
             <h2>For Queries</h2>
             <div className="glassWrapper-Query">
                 <input type="text" placeholder="  Full Name" />

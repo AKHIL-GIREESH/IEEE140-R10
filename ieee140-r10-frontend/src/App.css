@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 } */
+
+.fullScreenDivContainer{
+  /* style={{border:"1px solid",width:"100vw"}} */
+  border: 1px solid;
+  width: 100vw;
+}
