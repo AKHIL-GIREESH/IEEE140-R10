@@ -1,0 +1,14 @@
+.landingPgButtons{
+    margin-top: 5vh;
+    /* border: 1px solid white; */
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+.landingPgButtons button{
+    height: 70%;
+    width:8vw;
+    border-radius: 2em;
+    border: none;
+}
