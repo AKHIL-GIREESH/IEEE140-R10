@@ -15,8 +15,8 @@ const Carousal = () => {
 
 
     return(
-        <div style={{height:"100vh",width:"100vw"}}>
-            <div style={{display:"flex",height:"70vh",width:"80vw",marginLeft:"10vw",overflow:"hidden",marginTop:"25vh"}}>
+        <div style={{height:"80vh",width:"100vw"}}>
+            <div style={{display:"flex",height:"70vh",width:"80vw",marginLeft:"10vw",overflow:"hidden",marginTop:"5vh",borderRadius:"10px"}}>
                 {imgList[image]} 
                 <button style={{border:"none",position:"absolute",marginTop:"31vh",marginLeft:"2vw",borderRadius:"2.5em",height:"7vh",width:"7vh",backgroundColor:"#0073DD"}} onClick={() => setImage(prev => {
                     if(prev === 0){
