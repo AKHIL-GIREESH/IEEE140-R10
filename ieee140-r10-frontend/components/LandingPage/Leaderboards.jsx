@@ -21,7 +21,7 @@ const Leaderboards = () => {
                 <button>SECTION</button>
             </div>
             <div style={{display:"flex",height:"120vh",flexDirection:"column",justifyContent:"space-between",alignItems:"center"}}>
-                <div style={{display:"flex",width:"60vw",borderBottom:"1px solid #c9c9c9",marginTop:"8vh",justifyContent:"space-between"}}>
+                <div style={{display:"flex",width:"60vw",borderBottom:"1px solid #c9c9c9",marginTop:"8vh",justifyContent:"space-evenly"}}>
                     <p>Team Name</p> <p>Points</p>
                 </div>
                 { 
