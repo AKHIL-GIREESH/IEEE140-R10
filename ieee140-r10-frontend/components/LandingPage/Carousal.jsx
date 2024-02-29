@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { FaArrowLeft,FaArrowRight } from "react-icons/fa";
 
 const Carousal = () => {
 
@@ -14,16 +15,16 @@ const Carousal = () => {
 
 
     return(
-        <div style={{height:"100vh",width:"100vw",border:"1px solid"}}>
+        <div style={{height:"100vh",width:"100vw"}}>
             <div style={{display:"flex",height:"70vh",width:"80vw",marginLeft:"10vw",overflow:"hidden",marginTop:"25vh"}}>
                 {imgList[image]} 
-                <button style={{position:"absolute",marginTop:"35vh"}} onClick={() => setImage(prev => (prev+1)%5)}>👈</button> 
-                <button style={{position:"absolute",marginTop:"35vh",marginLeft:"78vw"}} onClick={() => setImage(prev => {
+                <button style={{border:"none",position:"absolute",marginTop:"31vh",marginLeft:"2vw",borderRadius:"2.5em",height:"7vh",width:"7vh",backgroundColor:"#0073DD"}} onClick={() => setImage(prev => {
                     if(prev === 0){
                         return 4
                     }
                     return prev-1
-                })}>👉</button>
+                })}><FaArrowLeft style={{fontSize:"2em"}}/></button> 
+                <button style={{border:"none",position:"absolute",marginTop:"31vh",marginLeft:"74vw",borderRadius:"2.5em",height:"7vh",width:"7vh",backgroundColor:"#0073DD"}} onClick={()=>setImage(prev => (prev+1)%5)}><FaArrowRight style={{fontSize:"2em"}}/></button>
             </div>
         </div>
     )
