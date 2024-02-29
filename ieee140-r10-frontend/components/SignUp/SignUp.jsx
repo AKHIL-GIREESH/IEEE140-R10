@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './SignUp.css'
 
 const SignUp = () => {
@@ -14,8 +15,8 @@ const SignUp = () => {
                 <input type="text" placeholder="  Password"/>
                 <input type="text" placeholder="  Confirm Password"/>
                 <div>
-                    <button>BACK</button>
-                    <button>SUBMIT</button>
+                    <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>BACK</Link></button>
+                    <button><Link to="/" style={{textDecoration:"none",color:"white"}}>SUBMIT</Link></button>
                 </div>
             </div>
         </div>
