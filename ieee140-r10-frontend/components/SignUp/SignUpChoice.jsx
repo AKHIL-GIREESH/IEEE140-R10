@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MdRadioButtonChecked } from "react-icons/md"; //ticked
 import { MdRadioButtonUnchecked } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const SignUpChoice = () => {
 
@@ -32,8 +33,8 @@ const SignUpChoice = () => {
             </div>
             <br/>
             <div>
-                <button>BACK</button>
-                <button>NEXT</button>
+                <button><Link to="/">BACK</Link></button>
+                <button><Link to="/SignUp">NEXT</Link></button>
             </div>
             
         </div>
