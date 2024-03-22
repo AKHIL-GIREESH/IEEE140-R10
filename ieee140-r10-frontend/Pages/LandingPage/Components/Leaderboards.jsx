@@ -6,8 +6,6 @@ import LeaderboardsTop10 from './LeaderBoardsTop10'
 const Leaderboards = () => {
     const [current,setCurrent] = useState("TEAM")
 
-    
-
     return(
         <div style={{height:"150vh",width:"90vw",marginLeft:"5vw"}}>
             <h1>Leaderboards</h1>
