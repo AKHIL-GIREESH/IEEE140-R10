@@ -1,16 +1,16 @@
 import { Route,Routes } from 'react-router-dom'
 import './App.css'
-import LandingPage from '../components/LandingPage/Landing'
-import Login from '../components/Login'
-import SignUpChoice from '../components/SignUp/SignUpChoice'
-import SignUp from '../components/SignUp/SignUp'
-import Profile from '../components/Profile'
-import FAQ from '../components/FAQ/FAQ'
+import LandingPage from '../Pages/LandingPage/Components/Landing'
+import Login from '../Pages/Login'
+import SignUpChoice from '../Pages/SignUp/SignUpChoice'
+import SignUp from '../Pages/SignUp/SignUp'
+import Profile from '../Pages/Profile'
+import FAQ from '../Pages/FAQ/FAQ'
 
 function App() {
   return(
     <>
-      
+
     </>
   )
 }

@@ -1,9 +1,9 @@
-import LandingPage from "../components/LandingPage/Landing"
-import SignUp from "../components/SignUp/SignUp"
-import Login from "../components/Login"
-import Profile from "../components/Profile"
-import FAQ from "../components/FAQ/FAQ"
-import SignUpChoice from "../components/SignUp/SignUpChoice"
+import LandingPage from "../Pages/LandingPage/Components/Landing"
+import SignUp from "../Pages/SignUp/SignUp"
+import Login from "../Pages/Login"
+import Profile from "../Pages/Profile"
+import FAQ from "../Pages/FAQ/FAQ"
+import SignUpChoice from "../Pages/SignUp/SignUpChoice"
 
 
 // <Routes>

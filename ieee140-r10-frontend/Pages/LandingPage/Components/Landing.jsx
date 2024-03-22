@@ -1,8 +1,8 @@
 import Carousal from "./Carousal"
-import Leaderboards from "./Leaderboards"
+import Leaderboards from "../Leaderboards"
 import About from "./About"
 import Footer from "./footer"
-import Navbar from "../Navbar/navbar"
+import Navbar from "../../Navbar/navbar"
 
 const LandingPage = () => {
     return(
