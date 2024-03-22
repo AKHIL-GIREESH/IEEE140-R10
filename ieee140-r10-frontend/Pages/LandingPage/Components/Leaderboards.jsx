@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './LandingPg.css'
+import '../Styles/LandingPg.css'
 
 const Leaderboards = () => {
     const [current,setCurrent] = useState("TEAM")
