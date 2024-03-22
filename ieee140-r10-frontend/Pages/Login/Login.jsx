@@ -15,7 +15,7 @@ const Login = () => {
             <h1>Create an Account</h1>
             <div className="glassWrapper-SignUp">
                 <LoginFields loginData={loginData} setLoginData={setLoginData}/>
-                <LoginButtons/>
+                <LoginButtons loginData={loginData}/>
             </div>
         </div>
     )

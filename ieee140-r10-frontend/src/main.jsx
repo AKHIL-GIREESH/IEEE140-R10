@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import LandingPage from '../Pages/LandingPage/Components/Landing.jsx'
@@ -10,6 +9,7 @@ import Login from '../Pages/Login/Login.jsx'
 import Profile from '../Pages/Profile.jsx'
 import FAQ from '../Pages/FAQ/FAQ.jsx'
 import AuthProvider from './AuthProvider.jsx'
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
 
 
 const router = createBrowserRouter([
@@ -39,11 +39,15 @@ const router = createBrowserRouter([
   }
 ])
 
+const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   
   <React.StrictMode>
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </QueryClientProvider>
   </React.StrictMode>,
 )
