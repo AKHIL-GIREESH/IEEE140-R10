@@ -1,8 +1,5 @@
 const LoginFields = ({loginData,setLoginData}) => {
 
-    console.log(loginData)
-    
-
     const handlechange = ({target}) => {
         const {name ,value} = target
         setLoginData({...loginData,[name]:value})

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import LoginButtons from "./LoginButtons"
 import LoginFields from "./LoginFields"
 
 const Login = () => {
@@ -14,10 +15,7 @@ const Login = () => {
             <h1>Create an Account</h1>
             <div className="glassWrapper-SignUp">
                 <LoginFields loginData={loginData} setLoginData={setLoginData}/>
-                <div>
-                    <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>LOGIN</Link></button>
-                    <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>SIGNUP</Link></button>
-                </div>
+                <LoginButtons/>
             </div>
         </div>
     )
