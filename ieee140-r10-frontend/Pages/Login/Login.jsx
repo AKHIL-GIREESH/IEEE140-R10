@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import LoginButtons from "./LoginButtons"
-import LoginFields from "./LoginFields"
+import LoginButtons from "./components/LoginButtons"
+import LoginFields from "./components/LoginFields"
 
 const Login = () => {
 

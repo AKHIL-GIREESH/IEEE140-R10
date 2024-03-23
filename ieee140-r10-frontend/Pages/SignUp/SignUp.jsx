@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './SignUp.css'
-import SignUpButtons from './SignUpButtons'
-import SignUpFields from './SignUpFields'
+import SignUpButtons from './components/SignUpButtons'
+import SignUpFields from './components/SignUpFields'
 
 const SignUp = () => {
 
@@ -21,7 +21,7 @@ const SignUp = () => {
             <h1>Create an Account</h1>
             <div className="glassWrapper-SignUp">
                 <SignUpFields signUpData={signUpData} setSignUpData={setSignUpData}/>
-                <SignUpButtons/>
+                <SignUpButtons signUpData={signUpData}/>
             </div>
         </div>
 
