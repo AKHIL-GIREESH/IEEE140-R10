@@ -1,4 +1,5 @@
 import { useState } from "react"
+import SubmitButtonFAQ from "./SubmitBttnFAQ"
 
 const NewReq = () => {
 
@@ -20,7 +21,7 @@ const NewReq = () => {
                 <input type="text" placeholder="  Full Name" name="fullname" onChange={handleChange} value={ques.fullname}/>
                 <input type="text" placeholder="  Email" name ="email" onChange={handleChange} value={ques.email}/>
                 <textarea placeholder=" Query" name="question" onChange={handleChange} value={ques.question}/>
-                <button>Submit</button>
+                <SubmitButtonFAQ/>
             </div>
             <br/><br/>
         </>
