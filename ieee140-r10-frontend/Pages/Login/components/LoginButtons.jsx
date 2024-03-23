@@ -4,11 +4,11 @@ import useLogin from "../hooks/useLogin"
 const LoginButtons = ({loginData,setAuth}) => {
 
     const trig = useLogin({loginData,setAuth})
-    console.log(trig?.data)
     
-    const loginFunc = () => {
+    const loginFunc = async () => {
         console.log("login")
-        trig.mutate()
+        const loggedIn = await trig.mutateAsync()
+        console.log(loggedIn?.data)
     }
     
     return(
