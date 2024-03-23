@@ -1,25 +1,16 @@
-import { useState } from "react"
 import { FAQdata } from "../../mocks/FAQ"
 import { IoIosArrowDown } from "react-icons/io";
 import './FAQ.css'
+import NewReq from "./components/NewReq";
+import { useState } from "react"
 
 const FAQ = () => {
-
     const [currentFAQ,setCurrentFAQ] = useState(false)
-
     return(
         //debugging
         <div className="fullScreenDivContainer">
-            <h2>For Queries</h2>
-            <div className="glassWrapper-Query">
-                <input type="text" placeholder="  Full Name" />
-                <input type="text" placeholder="  Email" />
-                <textarea placeholder=" Query" />
-                <button>Submit</button>
-            </div>
-            <br/><br/>
+            <NewReq/>
             <h2>FAQ</h2>
-
             {
                 FAQdata.map(({id,Q,A}) => {
                     return(
