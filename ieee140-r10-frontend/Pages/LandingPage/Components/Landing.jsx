@@ -7,8 +7,8 @@ import { useAuth } from "../../../src/AuthProvider"
 
 const LandingPage = () => {
 
-    const user = useAuth();
-    console.log(user)
+    // const user = useAuth();
+    // console.log(user)
     return(
         <>
             <Navbar/>

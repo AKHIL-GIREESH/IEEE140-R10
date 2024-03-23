@@ -1,23 +1,26 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import Cookies from "js-cookie";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
 const AuthContext = createContext(null);
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const userFunc = useGetUser();
-
-  useEffect(() => {
-    const token = Cookies.get("token");
-    if (token !== undefined) {
-      console.log(token);
-      userFunc.mutateAsync()
-    } else {
-      console.log("No Token");
-    }
-  }, [user]);
-  console.log("Auth");
+  if(userFunc?.data.firstName !== user){
+    setUser(userFunc?.data.firstName)
+  }
+//   useEffect(() => {
+//     const token = Cookies.get("token");
+//     if (token !== undefined) {
+//       console.log(token);
+//     //   userFunc()
+//     } else {
+//       console.log("No Token");
+//     }
+//   }, [user]);
+  console.log(userFunc);
+  console.log("check")
   //JWT
 
   return (
@@ -54,16 +57,17 @@ export const useSetAuth = () => {
 export const useGetUser = () => {
     const token = Cookies.get("token")
     console.log(token)
-  const user = useMutation({
-    mutationFn: () =>
-      fetch("http://159.65.7.52:5000/api/auth/profile", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization":token
-        },
-      }).then(resp => resp.json()).catch(() => console.log("Something went wrong")),
-    onSuccess: data => console.log(data)
-  });
-  return user
+    if(token !== undefined){
+        const user = useQuery({
+            queryFn: () =>
+              fetch("http://159.65.7.52:5000/api/auth/profile", {
+                headers: {
+                  "Content-Type": "application/json",
+                  "Authorization":token
+                },
+              }).then(resp => resp.json()).catch(() => console.log("Something went wrong")),
+          });
+          return user?.data
+    }
+    return null
 };
