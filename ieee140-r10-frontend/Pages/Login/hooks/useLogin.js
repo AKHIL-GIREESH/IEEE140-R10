@@ -10,7 +10,7 @@ const useLogin = ({loginData,setAuth}) => {
         }),headers: {
           "Content-Type": "application/json"
         }}).then(resp => resp.json()).catch(err => console.log(err)),
-        onSuccess: (data) => setAuth(data.user.username),
+        onSuccess: (data) => setAuth({user:data.user.username,token:"Bearer "+data.token}),
         onError: (error) => console.error('Error during sign-up:', error)
         })
 
