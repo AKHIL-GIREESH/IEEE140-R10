@@ -6,7 +6,14 @@ const AuthContext = createContext(null)
 export default function AuthProvider({children}){
     console.log("Auth")
     //JWT
-    const [user,setUser] = useState("Tommy Vercetti")
+    const [user,setUser] = useState(null)
+    const token = Cookies.get('token')
+    if( token !== undefined){
+        
+    }
+
+
+
     return <AuthContext.Provider value={{user,setUser}}>{children}</AuthContext.Provider>
 }
 
@@ -29,6 +36,8 @@ export const useSetAuth = () => {
             throw new Error('Provide user')
         }
         setUser(user)
+        Cookies.set('token', token, { expires: 7 });
+        
 
     }
 
