@@ -7,21 +7,17 @@ const AuthContext = createContext(null);
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const userFunc = useGetUser();
-  if(userFunc?.data.firstName !== user){
-    setUser(userFunc?.data.firstName)
+  if(userFunc?.data && userFunc?.data.firstName !== user ){
+    console.log("Works")
+    console.log(userFunc)
+    setUser(userFunc?.data?.firstName)
   }
-//   useEffect(() => {
-//     const token = Cookies.get("token");
-//     if (token !== undefined) {
-//       console.log(token);
-//     //   userFunc()
-//     } else {
-//       console.log("No Token");
-//     }
-//   }, [user]);
-  console.log(userFunc);
-  console.log("check")
-  //JWT
+    // // Check if userFunc.data is defined and setUser only if it's different from the current user state
+    // if (userFunc.data && userFunc.data.firstName !== user) {
+    //     console.log(userFunc.data.firstName)
+    //   setUser(userFunc.data.firstName);
+    // }
+    // console.log(userFunc)
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>
@@ -32,9 +28,10 @@ export default function AuthProvider({ children }) {
 
 export const useAuth = () => {
   const { user } = useContext(AuthContext);
+  console.log(user)
 
   if (user === undefined) {
-    throw new Error("useAuth out of scope");
+    return null
   }
 
   return user;
@@ -67,7 +64,7 @@ export const useGetUser = () => {
                 },
               }).then(resp => resp.json()).catch(() => console.log("Something went wrong")),
           });
-          return user?.data
+          return user.data
     }
     return null
 };
