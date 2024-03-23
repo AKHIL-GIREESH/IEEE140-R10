@@ -9,7 +9,7 @@ const useLogin = ({loginData}) => {
         }),headers: {
           "Content-Type": "application/json"
         }}).then(resp => resp.json()).catch(err => console.log(err)),
-        onSuccess: () => console.log("Works"),
+        onSuccess: (data) => console.log(data.user.username),
         onError: (error) => console.error('Error during sign-up:', error)
         })
 

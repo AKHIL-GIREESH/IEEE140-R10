@@ -6,16 +6,27 @@ export default function AuthProvider({children}){
     console.log("Auth")
     //JWT
     const [user,setUser] = useState("Tommy Vercetti");
-    return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>;
+    return <AuthContext.Provider value={{user,setUser}}>{children}</AuthContext.Provider>;
 }
 
 
 export const useAuth = () => {
-    const context = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
   
-    if (context === undefined) {
+    if (user === undefined) {
       throw new Error('useAuth out of scope');
     }
   
-    return context;
+    return user;
+}
+
+export const useSetAuth = (param) => {
+    const {setUser} = useContext(AuthContext)
+
+    if (param === undefined) {
+        throw new Error('Provide user');
+    }
+
+    setUser(param)
+
 }
