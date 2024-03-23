@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import useLogin from "../hooks/useLogin"
 
-const LoginButtons = ({loginData}) => {
+const LoginButtons = ({loginData,setAuth}) => {
 
-    const trig = useLogin(loginData)
+    const trig = useLogin({loginData,setAuth})
     console.log(trig?.data)
     
     const loginFunc = () => {

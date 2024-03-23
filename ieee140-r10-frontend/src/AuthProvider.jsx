@@ -20,13 +20,15 @@ export const useAuth = () => {
     return user;
 }
 
-export const useSetAuth = (param) => {
-    const {setUser} = useContext(AuthContext)
+export const useSetAuth = () => {
+    const { setUser } = useContext(AuthContext);
 
-    if (param === undefined) {
-        throw new Error('Provide user');
-    }
+    const setAuth = (param) => {
+        if (param === undefined) {
+            throw new Error('Provide user');
+        }
+        setUser(param);
+    };
 
-    setUser(param)
-
-}
+    return setAuth;
+};

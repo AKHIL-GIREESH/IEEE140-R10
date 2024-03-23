@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query"
+import { useSetAuth } from "../../../src/AuthProvider"
 
-const useLogin = ({loginData}) => {
+const useLogin = ({loginData,setAuth}) => {
     
     const loggedUser = useMutation({
         mutationFn:() => fetch("http://localhost:3000/api/v1/login",{method:"POST",body: JSON.stringify({
@@ -9,7 +10,7 @@ const useLogin = ({loginData}) => {
         }),headers: {
           "Content-Type": "application/json"
         }}).then(resp => resp.json()).catch(err => console.log(err)),
-        onSuccess: (data) => console.log(data.user.username),
+        onSuccess: (data) => setAuth(data.user.username),
         onError: (error) => console.error('Error during sign-up:', error)
         })
 
