@@ -30,6 +30,8 @@ const Profile = () => {
           {/* <input type="text" name="" value="" onChange={handleChange}/> */}
         </div>
       )}
+      <br/>
+      <button onClick={() => setJoinTeam((prev => !prev))}>Join Team</button>
       {joinTeam && (
         <div style={{ border: "1px solid black" }}>
           <input type="text" name="name" value={jteam} onChange={handleChangeJoin} />
