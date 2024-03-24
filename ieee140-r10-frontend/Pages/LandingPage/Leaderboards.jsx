@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import '../Styles/LandingPg.css'
-import LeaderboardsButtons from './LeaderBoardsButtons'
-import LeaderboardsTop10 from './LeaderBoardsTop10'
+import './Styles/LandingPg.css'
+import LeaderboardsButtons from './Components/LeaderBoardsButtons'
+import LeaderboardsTop10 from './Components/LeaderBoardsTop10'
 
 const Leaderboards = () => {
     const [current,setCurrent] = useState("TEAM")
