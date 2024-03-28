@@ -13,7 +13,7 @@ const LoginButtons = ({loginData,setAuth}) => {
     
     return(
         <div>
-            <button style={{color:"white"}} onClick={loginFunc}>LOGIN</button>
+            <button style={{color:"white"}} onClick={loginFunc} disabled={Object.values(loginData).includes("")}>LOGIN</button>
             <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>SIGNUP</Link></button>
         </div>
     )

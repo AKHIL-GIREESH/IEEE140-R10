@@ -66,5 +66,6 @@ export const useGetUser = () => {
           });
           return user.data
     }
+    console.log("No user found")
     return null
 };
