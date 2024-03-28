@@ -1,4 +1,4 @@
-const LoginFields = ({loginData,setLoginData}) => {
+const LoginFields = ({loginData,setLoginData,verifyMail}) => {
 
     const handlechange = ({target}) => {
         const {name ,value} = target
@@ -10,7 +10,7 @@ const LoginFields = ({loginData,setLoginData}) => {
 
     return(
         <>
-            <input type="text" name="email" placeholder="  Email" value={loginData.email} onChange={handlechange} style={{color:"black",border: (loginData.email === "" || /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(loginData.email))?null:"1px solid red"}}/>
+            <input type="text" name="email" placeholder="  Email" value={loginData.email} onChange={handlechange} style={{color:"black",border: (loginData.email === "" || verifyMail)?null:"1px solid red"}}/>
             <input type="text" name="password" placeholder="  Password" value={loginData.password} onChange={handlechange}/>
         </>
         

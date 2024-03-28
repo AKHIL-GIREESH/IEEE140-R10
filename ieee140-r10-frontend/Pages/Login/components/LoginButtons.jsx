@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import useLogin from "../hooks/useLogin"
 
-const LoginButtons = ({loginData,setAuth}) => {
+const LoginButtons = ({loginData,setAuth,verifyMail}) => {
 
     const trig = useLogin({loginData,setAuth})
     
@@ -13,7 +13,7 @@ const LoginButtons = ({loginData,setAuth}) => {
     
     return(
         <div>
-            <button style={{color:"white"}} onClick={loginFunc} disabled={Object.values(loginData).includes("")}>LOGIN</button>
+            <button style={{color:"white"}} onClick={loginFunc} disabled={Object.values(loginData).includes("") && !verifyMail}>LOGIN</button>
             <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>SIGNUP</Link></button>
         </div>
     )
