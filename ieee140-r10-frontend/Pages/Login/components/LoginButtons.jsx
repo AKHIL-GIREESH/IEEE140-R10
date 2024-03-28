@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom"
 import useLogin from "../hooks/useLogin"
 import { useMutation } from "@tanstack/react-query";
 
-const LoginButtons = ({loginData,setAuth,verifyMail,setHandleErr}) => {
+const LoginButtons = ({loginData,setAuth,verifyMail}) => {
 
     // const trig = useLogin({loginData,setAuth,setHandleErr})
     
@@ -27,7 +27,7 @@ const LoginButtons = ({loginData,setAuth,verifyMail,setHandleErr}) => {
             .catch((err) => console.log(err)),
         onSuccess: (data) => {
             setAuth({ user: data?.user.firstName, token: "Bearer " + data?.token })
-            navi('/')
+            navi('/',{replace:true})
         },
         onError: (error) => console.error("Error during sign-up:", error),
       });

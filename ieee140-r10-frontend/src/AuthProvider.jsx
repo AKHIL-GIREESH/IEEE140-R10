@@ -56,7 +56,7 @@ export const useGetUser = () => {
     console.log(token)
     const user = useQuery({
         queryFn: () =>
-          fetch("http://159.65.7.52:5000/api/auth/profile", {
+          fetch("http://159.65.7.52:5000/api/auth/getself", {
             headers: {
               "Content-Type": "application/json",
               "Authorization":token
