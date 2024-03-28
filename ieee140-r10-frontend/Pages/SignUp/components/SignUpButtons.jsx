@@ -13,7 +13,7 @@ const SignUpButtons = ({signUpData}) => {
 
     return (
         <div>
-            <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>BACK</Link></button>
+            <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}} disabled={Object.values(loginData).includes("") && !verifyMail}>BACK</Link></button>
             <button style={{textDecoration:"none",color:"white"}} onClick={SignUpFunc}>SUBMIT</button>
         </div>
     )

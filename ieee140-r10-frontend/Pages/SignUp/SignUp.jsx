@@ -17,14 +17,16 @@ const SignUp = () => {
         confirmPassword:""
     })
 
+    const verifyMail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(loginData.email)
+
     const setAuth = useSetAuth();
 
     return(
         <div style={{marginLeft:"25vw"}}>
             <h1>Create an Account</h1>
             <div className="glassWrapper-SignUp">
-                <SignUpFields signUpData={signUpData} setSignUpData={setSignUpData}/>
-                <SignUpButtons signUpData={signUpData} setAuth={setAuth}/>
+                <SignUpFields signUpData={signUpData} setSignUpData={setSignUpData} verifyMail={verifyMail}/>
+                <SignUpButtons signUpData={signUpData} setAuth={setAuth} verifyMail={verifyMail}/>
             </div>
         </div>
 
