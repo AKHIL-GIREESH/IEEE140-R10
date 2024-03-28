@@ -11,16 +11,20 @@ const Login = () => {
         password:""
     })
 
+    const [handleErr,setHandleErr] = useState(false)
+
     const verifyMail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(loginData.email)
 
     const setAuth = useSetAuth();
 
+    console.log(handleErr)
+    
     return(
         <div style={{marginLeft:"25vw"}}>
             <h1>Create an Account</h1>
             <div className="glassWrapper-SignUp">
                 <LoginFields loginData={loginData} setLoginData={setLoginData} verifyMail={verifyMail}/>
-                <LoginButtons loginData={loginData} setAuth={setAuth} verifyMail={verifyMail}/>
+                <LoginButtons loginData={loginData} setAuth={setAuth} verifyMail={verifyMail} setHandleErr={setHandleErr}/>
             </div>
         </div>
     )

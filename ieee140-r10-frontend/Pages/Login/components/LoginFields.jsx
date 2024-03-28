@@ -11,7 +11,7 @@ const LoginFields = ({loginData,setLoginData,verifyMail}) => {
     return(
         <>
             <input type="text" name="email" placeholder="  Email" value={loginData.email} onChange={handlechange} style={{color:"black",border: (loginData.email === "" || verifyMail)?null:"1px solid red"}}/>
-            <input type="text" name="password" placeholder="  Password" value={loginData.password} onChange={handlechange}/>
+            <input style={{color:"black"}} type="text" name="password" placeholder="  Password" value={loginData.password} onChange={handlechange}/>
         </>
         
     )

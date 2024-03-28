@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import useLogin from "../hooks/useLogin"
 
-const LoginButtons = ({loginData,setAuth,verifyMail}) => {
+const LoginButtons = ({loginData,setAuth,verifyMail,setHandleErr}) => {
 
-    const trig = useLogin({loginData,setAuth})
+    const trig = useLogin({loginData,setAuth,setHandleErr})
     
     const loginFunc = async () => {
         console.log("login")
