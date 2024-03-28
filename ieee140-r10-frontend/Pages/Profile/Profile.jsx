@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CreateTeamButton from "./components/CreateTeamButton";
 import JoinTeamButton from "./components/JoinTeamButton";
+import LogoutButton from "./components/LogoutButton";
 
 const Profile = () => {
   const [createTeam, setCreateTeam] = useState(false);
@@ -38,6 +39,7 @@ const Profile = () => {
           <JoinTeamButton team={jteam} />
         </div>
       )}
+      <LogoutButton/>
     </>
   );
 };

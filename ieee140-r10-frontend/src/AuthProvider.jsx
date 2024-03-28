@@ -54,18 +54,32 @@ export const useSetAuth = () => {
 export const useGetUser = () => {
     const token = Cookies.get("token")
     console.log(token)
-    if(token !== undefined){
-        const user = useQuery({
-            queryFn: () =>
-              fetch("http://159.65.7.52:5000/api/auth/profile", {
-                headers: {
-                  "Content-Type": "application/json",
-                  "Authorization":token
-                },
-              }).then(resp => resp.json()).catch(() => console.log("Something went wrong")),
-          });
-          return user.data
+    const user = useQuery({
+        queryFn: () =>
+          fetch("http://159.65.7.52:5000/api/auth/profile", {
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization":token
+            },
+          }).then(resp => resp.json()).catch(() => console.log("Something went wrong")),
+      });
+
+    if(user.error){
+      return null
     }
-    console.log("No user found")
-    return null
+
+    return user.data
 };
+
+export const useLogout = () => {
+
+  const { setUser } = useContext(AuthContext);
+
+  const logout = () => {
+    console.log("check")
+    Cookies.remove('token');
+    setUser(null)
+  };
+
+  return logout;
+}
