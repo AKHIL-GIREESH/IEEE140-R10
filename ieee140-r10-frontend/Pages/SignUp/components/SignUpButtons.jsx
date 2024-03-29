@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import { useMutation } from "@tanstack/react-query"
 
 const SignUpButtons = ({signUpData,verifyMail,setAuth,verifyPassword}) => {
@@ -10,6 +10,8 @@ const SignUpButtons = ({signUpData,verifyMail,setAuth,verifyPassword}) => {
     //     console.log("login")
     //     data.mutate()
     // }
+
+    const navi = useNavigate()
 
     const {confirmPassword,...apiData} = signUpData //delete signUpData.confirmPassword
 
@@ -25,6 +27,7 @@ const SignUpButtons = ({signUpData,verifyMail,setAuth,verifyPassword}) => {
         onSuccess: data => {
             console.log("WOrks")
             setAuth({user:data.user.firstName,token:"Bearer "+data.token})
+            navi('/',{replace:true})
         },
         onError: error => console.error('Error during sign-up:', error)
         })
