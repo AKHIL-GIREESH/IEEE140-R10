@@ -20,7 +20,7 @@ const Login = () => {
             <h1>Create an Account</h1>
             <div className="glassWrapper-SignUp">
                 <LoginFields loginData={loginData} setLoginData={setLoginData} verifyMail={verifyMail}/>
-                <LoginButtons loginData={loginData} setAuth={setAuth} verifyMail={verifyMail} setHandleErr={setHandleErr}/>
+                <LoginButtons loginData={loginData} setAuth={setAuth} verifyMail={verifyMail}/>
             </div>
         </div>
     )

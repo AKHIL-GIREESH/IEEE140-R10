@@ -55,6 +55,7 @@ export const useGetUser = () => {
     const token = Cookies.get("token")
     console.log(token)
     const user = useQuery({
+        queryKey:["User"],
         queryFn: () =>
           fetch("http://159.65.7.52:5000/api/auth/getself", {
             headers: {
