@@ -1,5 +1,3 @@
-import "../signUpStyles.css"
-
 const SignUpFields = ({signUpData,setSignUpData,verifyMail,verifyPassword}) => {
 
     const handleChangeSignUp = ({target}) => {

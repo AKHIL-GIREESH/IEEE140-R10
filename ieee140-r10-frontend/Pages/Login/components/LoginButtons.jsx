@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useMutation } from "@tanstack/react-query";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const LoginButtons = ({loginData,setAuth,verifyMail}) => {
 
@@ -10,6 +11,12 @@ const LoginButtons = ({loginData,setAuth,verifyMail}) => {
     //     const loggedIn = await trig.mutateAsync()
     //     console.log(loggedIn?.data)
     // }
+    let verifyCaptcha = false
+
+    const onChange = () => {
+      verifyCaptcha = true
+    }
+
     const navi = useNavigate()
 
     const loggedUser = useMutation({
@@ -38,7 +45,11 @@ const LoginButtons = ({loginData,setAuth,verifyMail}) => {
     
     return(
         <div>
-            <button style={{color:"white"}} onClick={loginFunc} disabled={Object.values(loginData).includes("") && !verifyMail}>{loggedUser.isPending?"Loading":"LOGIN"}</button>
+            <ReCAPTCHA
+                sitekey="6Leqq6gpAAAAAL617ua6e5nwhGkvEFkT_cAEv4dP"
+                onChange={onChange}
+            />
+            <button className="DisabledButton" style={{color:"white",cursor:"pointer"}} onClick={loginFunc} disabled={Object.values(loginData).includes("") && !verifyMail && !verifyCaptcha}>{loggedUser.isPending?"Loading":"LOGIN"}</button>
             <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>SIGNUP</Link></button>
             {loggedUser.isError && <p>Oops Wrong Credentials!</p>}
         </div>

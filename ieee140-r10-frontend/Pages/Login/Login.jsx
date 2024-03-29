@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { useSetAuth } from "../../src/AuthProvider"
 import LoginButtons from "./components/LoginButtons"
 import LoginFields from "./components/LoginFields"
+import './login.css'
 
 const Login = () => {
 

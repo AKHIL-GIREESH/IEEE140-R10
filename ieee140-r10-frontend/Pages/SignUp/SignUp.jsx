@@ -31,7 +31,7 @@ const SignUp = () => {
     })
 
     const verifyMail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(signUpData.email)
-    const verifyPassword = signUpData.password === signUpData.confirmPassword
+    const verifyPassword = signUpData.password.length>1 && signUpData.password === signUpData.confirmPassword
 
     const setAuth = useSetAuth();
 

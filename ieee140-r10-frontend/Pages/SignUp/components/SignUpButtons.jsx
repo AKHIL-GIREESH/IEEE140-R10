@@ -1,5 +1,6 @@
 import { Link,useNavigate } from 'react-router-dom'
 import { useMutation } from "@tanstack/react-query"
+import ReCAPTCHA from 'react-google-recaptcha'
 
 const SignUpButtons = ({signUpData,verifyMail,setAuth,verifyPassword}) => {
 
@@ -10,6 +11,11 @@ const SignUpButtons = ({signUpData,verifyMail,setAuth,verifyPassword}) => {
     //     console.log("login")
     //     data.mutate()
     // }
+    let verifyCaptcha = false
+
+    const onChange = () => {
+        verifyCaptcha = true
+    }
 
     const navi = useNavigate()
 
@@ -36,10 +42,16 @@ const SignUpButtons = ({signUpData,verifyMail,setAuth,verifyPassword}) => {
         signedUser.mutate()
     }
 
+    console.log(Object.values(signUpData).includes("") && !verifyMail && !verifyPassword) //&& !verifyCaptcha)
+
     return (
         <div>
+            <ReCAPTCHA
+                sitekey="6Leqq6gpAAAAAL617ua6e5nwhGkvEFkT_cAEv4dP"
+                onChange={onChange}
+            />
             <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>BACK</Link></button> 
-            <button style={{textDecoration:"none",color:"white"}} onClick={SignUpFunc} disabled={Object.values(signUpData).includes("") && !verifyMail && !verifyPassword}>{signedUser.isPending?"Loading":"SIGNUP"}</button>
+            <button className="DisabledButton" style={{textDecoration:"none",color:"white"}} onClick={SignUpFunc} disabled={Object.values(signUpData).includes("") && !verifyMail && !verifyPassword}>{signedUser.isPending?"Loading":"SIGNUP"}</button>
             {signedUser.isError && <p>Oops Wrong Credentials!</p>}
             {/* disabled={Object.values(signUpData).includes("") && !verifyMail && !verifyPassword } */}
         </div>
