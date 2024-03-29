@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useMutation } from "@tanstack/react-query"
 
-const SignUpButtons = ({signUpData,verifyMail,setAuth}) => {
+const SignUpButtons = ({signUpData,verifyMail,setAuth,verifyPassword}) => {
 
     // const data = useSignIn(signUpData)
     // console.log(data?.data)
@@ -11,27 +11,12 @@ const SignUpButtons = ({signUpData,verifyMail,setAuth}) => {
     //     data.mutate()
     // }
 
-    delete signUpData.confirmPassword
-    signUpData = {...signUpData,lastName:"_",is_ieee: true}
-    console.log(signUpData)
-
+    const {confirmPassword,...apiData} = signUpData //delete signUpData.confirmPassword
 
     const signedUser = useMutation({
         mutationKey:["signUp"],
-        mutationFn:() => fetch("http://159.65.7.52:5000/api/auth/register/",{method:"POST",body: JSON.stringify(
-            {
-                firstName: "User74",
-                lastName: "Doe",
-                email: "user74@gmail.com",
-                password: "user7",
-                ieeeMemberNumber: "ABC123XYZ",
-                section: "Example Section",
-                city: "Example City",
-                state: "Example State",
-                country: "Example Country",
-                is_ieee: true
-              }
-        ),headers: {
+        mutationFn:() => fetch("http://159.65.7.52:5000/api/auth/register/",{method:"POST",body: JSON.stringify(apiData),
+        headers: {
           "Content-Type": "application/json"
         }})
         .then(resp => resp.json())
@@ -51,9 +36,9 @@ const SignUpButtons = ({signUpData,verifyMail,setAuth}) => {
     return (
         <div>
             <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>BACK</Link></button> 
-            <button style={{textDecoration:"none",color:"white"}} onClick={SignUpFunc}>{signedUser.isPending?"Loading":"SIGNUP"}</button>
+            <button style={{textDecoration:"none",color:"white"}} onClick={SignUpFunc} disabled={Object.values(signUpData).includes("") && !verifyMail && !verifyPassword}>{signedUser.isPending?"Loading":"SIGNUP"}</button>
             {signedUser.isError && <p>Oops Wrong Credentials!</p>}
-            {/* disabled={Object.values(signUpData).includes("") && !verifyMail} */}
+            {/* disabled={Object.values(signUpData).includes("") && !verifyMail && !verifyPassword } */}
         </div>
     )
 }
