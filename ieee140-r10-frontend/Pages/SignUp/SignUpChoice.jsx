@@ -12,6 +12,8 @@ const SignUpChoice = () => {
         "Non-IEEE"
     ]
 
+    localStorage.setItem('MemType', radio)
+
     return(
         <div className="fullScreenDivContainer" style={{height:"100vh",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
             <h1>Choose your Category</h1>

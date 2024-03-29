@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom"
-import useLogin from "../hooks/useLogin"
 import { useMutation } from "@tanstack/react-query";
 
 const LoginButtons = ({loginData,setAuth,verifyMail}) => {
