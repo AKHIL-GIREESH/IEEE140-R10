@@ -7,8 +7,9 @@ import { useSetAuth } from '../../src/AuthProvider'
 const SignUp = () => {
 
     const [signUpData,setSignUpData] = useState({
-        name:"",
+        firstName:"",
         email:"",
+        ieeeMemberNumber:"",
         section:"",
         city:"",
         state:"",
@@ -17,7 +18,7 @@ const SignUp = () => {
         confirmPassword:""
     })
 
-    const verifyMail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(loginData.email)
+    const verifyMail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(signUpData.email)
 
     const setAuth = useSetAuth();
 
