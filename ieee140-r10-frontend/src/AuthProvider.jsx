@@ -1,11 +1,20 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import Cookies from "js-cookie";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 const AuthContext = createContext(null);
 
 export default function AuthProvider({ children }) {
+  
+  
   const [user, setUser] = useState(null);
+  
+  const queryClient = useQueryClient()
+
+    useEffect(() => {
+        queryClient.invalidateQueries(['User'])
+    },[user])
+
   const userFunc = useGetUser();
   if(userFunc?.data && userFunc?.data.firstName !== user ){
     console.log("Works")
