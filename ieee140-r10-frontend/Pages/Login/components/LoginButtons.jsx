@@ -52,7 +52,7 @@ const LoginButtons = ({loginData,setAuth,verifyMail}) => {
                 theme="dark light"
             />
             <button className="DisabledButton" onClick={loginFunc} disabled={Object.values(loginData).includes("") || !verifyMail || !verifyCaptcha || loginData.password.length < 1}>{loggedUser.isPending?"Loading":"LOGIN"}</button>
-            <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>SIGNUP</Link></button>
+            <p><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>Create an Account →</Link></p>
             {loggedUser.isError && <p>Oops Wrong Credentials!</p>}
         </div>
     )

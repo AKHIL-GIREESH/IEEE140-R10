@@ -2,3 +2,10 @@
     background-color: #005DB3;
     color: #B6B6B6;
 }
+
+.glassWrapper-Login{
+    width: 50vw;
+    height: 65vh;
+    border: 1px solid;
+    border-radius: 15px;
+}
