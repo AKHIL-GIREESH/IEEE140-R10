@@ -14,14 +14,14 @@ const FAQ = () => {
             {
                 FAQdata.map(({id,Q,A}) => {
                     return(
-                        <div className="glassWrapper-FAQ" key={id} onClick={() => currentFAQ === id?setCurrentFAQ(-1):setCurrentFAQ(id)}>
-                            <div style={{fontSize:"1.3rem",fontWeight:600,display:"flex",alignItems:"center"}}>
+                        <div className="glassWrapper-FAQ" key={id} onClick={() => currentFAQ === id?setCurrentFAQ(-1):setCurrentFAQ(id)} style={window.innerHeight>window.innerWidth?{width:"88%",marginLeft:"3%"}:null}>
+                            <div style={{fontSize:window.innerHeight>window.innerWidth?"1rem":"1.3rem",fontWeight:600,display:"flex",alignItems:"center"}}>
                                 <div style={{width:"95%"}}>
                                     {Q}
                                 </div>
                             <IoIosArrowDown />
                             </div>
-                            {currentFAQ === id && <div>{A}</div>}
+                            {currentFAQ === id && <div style={{marginTop:"5%"}}>{A}</div>}
                         </div>
                     )
                 })
