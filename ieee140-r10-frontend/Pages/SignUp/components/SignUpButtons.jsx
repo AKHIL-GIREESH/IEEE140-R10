@@ -45,14 +45,19 @@ const SignUpButtons = ({signUpData,verifyMail,setAuth,verifyPassword}) => {
     console.log(Object.values(signUpData).includes("") && !verifyMail && !verifyPassword) //&& !verifyCaptcha)
 
     return (
-        <div>
-            <ReCAPTCHA
-                sitekey="6Leqq6gpAAAAAL617ua6e5nwhGkvEFkT_cAEv4dP"
-                onChange={onChange}
-            />
-            <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>BACK</Link></button> 
-            <button className="DisabledButton" style={{textDecoration:"none",color:"white"}} onClick={SignUpFunc} disabled={Object.values(signUpData).includes("") && !verifyMail && !verifyPassword}>{signedUser.isPending?"Loading":"SIGNUP"}</button>
-            {signedUser.isError && <p>Oops Wrong Credentials!</p>}
+        <div style={{border:"1px solid",height:"25vh",width:"100%",display:"flex",flexDirection:"column",justifyContent:"center"}}>
+            <div style={{height:"50%",alignSelf:"flex-start"}}>
+                <ReCAPTCHA 
+                    className='captcha'
+                    sitekey="6Leqq6gpAAAAAL617ua6e5nwhGkvEFkT_cAEv4dP"
+                    onChange={onChange}
+                />
+                {signedUser.isError && <p>Something went Wrong</p>}
+            </div>
+            <div style={{height:"50%"}}>
+                <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>BACK</Link></button> 
+                <button className="DisabledButton" style={{textDecoration:"none",color:"white"}} onClick={SignUpFunc} disabled={Object.values(signUpData).includes("") && !verifyMail && !verifyPassword}>{signedUser.isPending?"Loading":"SIGNUP"}</button>
+            </div>
             {/* disabled={Object.values(signUpData).includes("") && !verifyMail && !verifyPassword } */}
         </div>
     )
