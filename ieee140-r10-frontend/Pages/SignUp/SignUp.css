@@ -38,5 +38,6 @@ input{
 }
 
 .DisabledButton:disabled{
-    background-color: grey;
+    background-color: #005DB3;
+    color: #B6B6B6;
 }

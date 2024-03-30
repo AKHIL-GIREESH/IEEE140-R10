@@ -19,7 +19,7 @@ const Login = () => {
     return(
         <div style={{marginLeft:"25vw"}}>
             <h1>Create an Account</h1>
-            <div className="glassWrapper-SignUp">
+            <div className="glassWrapper-Login">
                 <LoginFields loginData={loginData} setLoginData={setLoginData} verifyMail={verifyMail}/>
                 <LoginButtons loginData={loginData} setAuth={setAuth} verifyMail={verifyMail}/>
             </div>

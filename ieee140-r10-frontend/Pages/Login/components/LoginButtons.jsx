@@ -15,6 +15,7 @@ const LoginButtons = ({loginData,setAuth,verifyMail}) => {
 
     const onChange = () => {
       verifyCaptcha = true
+      console.log(verifyCaptcha)
     }
 
     const navi = useNavigate()
@@ -42,14 +43,15 @@ const LoginButtons = ({loginData,setAuth,verifyMail}) => {
         loggedUser.mutate()
       }
     
-    
+      console.log(verifyCaptcha)
     return(
         <div>
             <ReCAPTCHA
                 sitekey="6Leqq6gpAAAAAL617ua6e5nwhGkvEFkT_cAEv4dP"
                 onChange={onChange}
+                theme="dark light"
             />
-            <button className="DisabledButton" style={{color:"white",cursor:"pointer"}} onClick={loginFunc} disabled={Object.values(loginData).includes("") && !verifyMail && !verifyCaptcha}>{loggedUser.isPending?"Loading":"LOGIN"}</button>
+            <button className="DisabledButton" onClick={loginFunc} disabled={Object.values(loginData).includes("") || !verifyMail || !verifyCaptcha || loginData.password.length < 1}>{loggedUser.isPending?"Loading":"LOGIN"}</button>
             <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>SIGNUP</Link></button>
             {loggedUser.isError && <p>Oops Wrong Credentials!</p>}
         </div>
