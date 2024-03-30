@@ -41,3 +41,20 @@ input{
     background-color: #005DB3;
     color: #B6B6B6;
 }
+
+
+.SignUpChoice button{
+    background-color: #0073DD;
+    border: none;
+    height: 7vh;
+    width:8vw;
+    border-radius: 6px;
+    margin: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.SignUpChoice button a{
+    color: white;
+    text-decoration: none;
+}
