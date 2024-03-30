@@ -14,7 +14,7 @@ const FAQ = () => {
             {
                 FAQdata.map(({id,Q,A}) => {
                     return(
-                        <div className="glassWrapper-FAQ" key={id} onClick={() => currentFAQ === id?setCurrentFAQ(-1):setCurrentFAQ(id)} style={{height:currentFAQ === id?"20vh":"8vh"}}>
+                        <div className="glassWrapper-FAQ" key={id} onClick={() => currentFAQ === id?setCurrentFAQ(-1):setCurrentFAQ(id)}>
                             <div style={{fontSize:"1.3rem",fontWeight:600,display:"flex",alignItems:"center"}}>
                                 <div style={{width:"95%"}}>
                                     {Q}

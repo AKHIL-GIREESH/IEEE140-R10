@@ -44,5 +44,5 @@
 .fullScreenDivContainer{
   /* style={{border:"1px solid",width:"100vw"}} */
   border: 1px solid;
-  width: 100vw;
+  height: fit-content;
 }
