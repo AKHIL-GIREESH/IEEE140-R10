@@ -9,3 +9,7 @@
     border: 1px solid;
     border-radius: 15px;
 }
+
+.DisabledButton{
+    width:70%
+}
