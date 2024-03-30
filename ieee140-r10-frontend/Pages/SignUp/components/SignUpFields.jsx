@@ -11,7 +11,7 @@ const SignUpFields = ({signUpData,setSignUpData,verifyMail,verifyPassword}) => {
             <input type="text" placeholder="  Last Name" value={signUpData.lastName} name="lastName"  onChange={handleChangeSignUp}/>
             <input type="text" placeholder="  Email" value={signUpData.email} name="email"  onChange={handleChangeSignUp} style={{border: (signUpData.email === "" || verifyMail)?null:"1px solid red"}}/>
             {
-            localStorage.getItem('MemType') === "IEEE" && <>
+            localStorage.getItem('MemType') === "IEEE Member" && <>
                 <input type="text" placeholder="  IEEE Number" value={signUpData.ieeeMemberNumber} name="ieeeMemberNumber" onChange={handleChangeSignUp}/>
                 <input type="text" placeholder="  IEEE Section" value={signUpData.section} name="section" onChange={handleChangeSignUp}/>
             </>

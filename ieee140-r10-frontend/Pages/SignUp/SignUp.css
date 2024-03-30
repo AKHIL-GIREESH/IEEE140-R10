@@ -24,14 +24,14 @@
     align-items: center;
 }
 
-/* .glassWrapper-SignUp div button{
+.glassWrapper-SignUp div button{
     width: 45%;
-    height: 80%;
+    height: 60%;
     border-radius: 6px;
     border: none;
     font-size: 1.1em;
     background-color: #0073DD;
-} */
+}
 
 input{
     color:black;
@@ -40,6 +40,8 @@ input{
 .DisabledButton:disabled{
     background-color: #005DB3;
     color: #B6B6B6;
+    box-shadow: 0 0 20px rgba(0, 0, 0,0.3);
+    cursor: default;
 }
 
 
