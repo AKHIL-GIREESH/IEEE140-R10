@@ -4,12 +4,31 @@
 }
 
 .glassWrapper-Login{
-    width: 50vw;
-    height: 65vh;
+    width: 40vw;
+    height: 60vh;
     border: 1px solid;
     border-radius: 15px;
 }
 
 .DisabledButton{
-    width:70%
+    width:100%
 }
+
+.LoginField{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.LoginField p{
+    /* display: inline-block; */
+    align-self: flex-end;
+}
+
+.LoginField input{
+    height: 30%;
+    border-radius: 8px;
+    font-size: 18px;
+    width:100%
+}
+

@@ -45,7 +45,7 @@ const LoginButtons = ({loginData,setAuth,verifyMail}) => {
     
       console.log(verifyCaptcha)
     return(
-        <div style={{height:"65%",border:"1px solid",display:"flex",flexDirection:"column",justifyContent:"space-between"}}>
+        <div style={{height:"55%",border:"1px solid",display:"flex",flexDirection:"column",justifyContent:"space-between"}}>
             <ReCAPTCHA
                 sitekey="6Leqq6gpAAAAAL617ua6e5nwhGkvEFkT_cAEv4dP"
                 onChange={onChange}
