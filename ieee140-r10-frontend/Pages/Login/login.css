@@ -1,6 +1,8 @@
 .DisabledButton:disabled{
     background-color: #005DB3;
     color: #B6B6B6;
+    box-shadow: 0 0 20px rgba(0, 0, 0,0.3);
+    cursor: default;
 }
 
 .glassWrapper-Login{
@@ -9,6 +11,8 @@
     border: 1px solid;
     border-radius: 15px;
     padding: 3%;
+    background-color:rgba(250,250,250, 0.1);
+    backdrop-filter:blur(10px);
 }
 
 .DisabledButton{
@@ -18,6 +22,8 @@
     border: none;
     border-radius: 8px;
     font-weight: 600;
+    background-color: #0073DD;
+    cursor: pointer;
 }
 
 .LoginField{

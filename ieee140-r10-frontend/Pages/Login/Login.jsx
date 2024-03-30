@@ -17,7 +17,7 @@ const Login = () => {
     const setAuth = useSetAuth();
 
     return(
-        <div style={{marginLeft:"25vw"}}>
+        <div style={{display:'flex',flexDirection:"column"}}>
             <h1>Login</h1>
             <div className="glassWrapper-Login">
                 <LoginFields loginData={loginData} setLoginData={setLoginData} verifyMail={verifyMail}/>

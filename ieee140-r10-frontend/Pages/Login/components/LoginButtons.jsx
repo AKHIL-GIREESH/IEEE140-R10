@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useMutation } from "@tanstack/react-query";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useState } from "react";
 
 const LoginButtons = ({loginData,setAuth,verifyMail}) => {
 
@@ -11,10 +12,11 @@ const LoginButtons = ({loginData,setAuth,verifyMail}) => {
     //     const loggedIn = await trig.mutateAsync()
     //     console.log(loggedIn?.data)
     // }
-    let verifyCaptcha = false
+
+    const [verifyCaptcha,setVerifyCaptcha] = useState(false)
 
     const onChange = () => {
-      verifyCaptcha = true
+     setVerifyCaptcha(true)
       console.log(verifyCaptcha)
     }
 
