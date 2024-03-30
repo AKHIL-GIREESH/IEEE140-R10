@@ -2,18 +2,22 @@ import { useQuery } from "@tanstack/react-query"
 
 const LeaderboardsTop10 = ({current}) => {
 
-    console.log(current)
-
     const route = {
-        "INDIVIDUAL":"",
+        "INDIVIDUAL":"individual",
         "TEAM":"teams",
-        "SECTION":""
+        "SECTION":"section"
     }
 
+    console.log(route[current])
+
+
     const Data = useQuery({
-        queryFn:() => fetch("http://159.65.7.52:5000/api/leaderboard/teams").then(resp => resp.json()),
+        queryFn:() => fetch(`http://159.65.7.52:5000/api/leaderboard/${route[current]}`).then(resp => resp.json()),
         queryKey:["leaderBoards"]
     })
+
+    //Data.isSuccess && queryClient.invalidateQueries(['leaderBoards'])
+    Data.isSuccess && console.log(Data.data)
     // let table = []
 
     // for(let i=0;i<10;i++){
@@ -24,7 +28,7 @@ const LeaderboardsTop10 = ({current}) => {
     //     )
     // }
 
-    console.log(Data?.data)
+    // console.log(Data?.data)
 
     return(
         <div style={{display:"flex",height:"120vh",flexDirection:"column",justifyContent:"space-between",alignItems:"center"}}>
@@ -33,7 +37,7 @@ const LeaderboardsTop10 = ({current}) => {
             </div>
             {Data.isLoading && <p>Loading</p>}
             {Data.isError && <p>Error</p>}
-            {Data.isSuccess && <p>{Data.data?.team[0].name}</p>}
+            {/* {Data.isSuccess && <p>{Data.data?.team[0].name}</p>} */}
         </div>
     )
 }
