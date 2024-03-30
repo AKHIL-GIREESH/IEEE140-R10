@@ -8,10 +8,16 @@
     height: 60vh;
     border: 1px solid;
     border-radius: 15px;
+    padding: 3%;
 }
 
 .DisabledButton{
-    width:100%
+    width:100%;
+    height:20%;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
 }
 
 .LoginField{
@@ -28,7 +34,7 @@
 .LoginField input{
     height: 30%;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 15px;
     width:100%
 }
 

@@ -45,14 +45,14 @@ const LoginButtons = ({loginData,setAuth,verifyMail}) => {
     
       console.log(verifyCaptcha)
     return(
-        <div style={{height:"55%",border:"1px solid",display:"flex",flexDirection:"column",justifyContent:"space-between"}}>
+        <div style={{height:"60%",display:"flex",flexDirection:"column",justifyContent:"space-between"}}>
             <ReCAPTCHA
                 sitekey="6Leqq6gpAAAAAL617ua6e5nwhGkvEFkT_cAEv4dP"
                 onChange={onChange}
                 theme="dark light"
             />
             <button className="DisabledButton" onClick={loginFunc} disabled={Object.values(loginData).includes("") || !verifyMail || !verifyCaptcha || loginData.password.length < 1}>{loggedUser.isPending?"Loading":"LOGIN"}</button>
-            <p><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>Create an Account →</Link></p>
+            <p style={{alignSelf:"center"}}><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>Create an Account →</Link></p>
             {loggedUser.isError && <p>Oops Wrong Credentials!</p>}
         </div>
     )
