@@ -27,6 +27,7 @@ textarea, input{
     border: none;
     border-radius: 10px;
     width: 95%;
+    color: black;
 }
 
 input{

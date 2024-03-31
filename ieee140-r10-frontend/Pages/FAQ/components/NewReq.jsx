@@ -21,7 +21,7 @@ const NewReq = () => {
                 <input type="text" placeholder="  Full Name" name="fullname" onChange={handleChange} value={ques.fullname}/>
                 <input type="text" placeholder="  Email" name ="email" onChange={handleChange} value={ques.email}/>
                 <textarea placeholder=" Query" name="question" onChange={handleChange} value={ques.question}/>
-                <SubmitButtonFAQ/>
+                <SubmitButtonFAQ ques={ques}/>
             </div>
             <br/><br/>
         </>
