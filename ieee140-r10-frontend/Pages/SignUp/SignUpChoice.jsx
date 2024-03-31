@@ -16,7 +16,7 @@ const SignUpChoice = () => {
 
     return(
         <div className="fullScreenDivContainer" style={{height:"100vh",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-            <p style={{fontSize:"2.5rem",fontWeight:"700"}}>CHOOSE YOUR <span style={{color:"#0073DD"}}>CATEGORY</span></p>
+            <p style={{fontSize:window.innerHeight>window.innerWidth?"1.7rem":"2.5rem",fontWeight:"700"}}>CHOOSE YOUR <span style={{color:"#0073DD"}}>CATEGORY</span></p>
             <div style={{fontSize:"21px"}}>
                 {rbData.map(item => {
                     return(<div style={{cursor:"pointer",display:"flex",margin:"3vh",alignItems:"center"}} onClick={() => setRadio(item)}>
@@ -35,8 +35,8 @@ const SignUpChoice = () => {
             </div>
             <br/>
             <div className="SignUpChoice">
-                <button><Link to="/">BACK</Link></button>
-                <button><Link to="/SignUp">NEXT</Link></button>
+                <button style={window.innerHeight>window.innerWidth?{width:"20vw",height:"6vh"}:null}><Link to="/">BACK</Link></button>
+                <button style={window.innerHeight>window.innerWidth?{width:"20vw",height:"6vh"}:null}><Link to="/SignUp">NEXT</Link></button>
             </div>
             
         </div>
