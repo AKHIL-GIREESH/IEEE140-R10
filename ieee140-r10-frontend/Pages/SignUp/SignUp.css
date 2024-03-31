@@ -9,9 +9,16 @@
     align-items: center;
 }
 
-.glassWrapper-SignUp input{
-    height: 7%;
-    width:93%
+.glassWrapper-SignUp input,select{
+    height: 6%;
+    width:99%;
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+}
+
+.glassWrapper-SignUp select{
+    width: 50%;
 }
 
 .glassWrapper-SignUp div{
@@ -31,10 +38,6 @@
     border: none;
     font-size: 1.1em;
     background-color: #0073DD;
-}
-
-input{
-    color:black;
 }
 
 .DisabledButton:disabled{
@@ -62,5 +65,5 @@ input{
 }
 
 .captcha{
-    transform:scale(0.77);
+    transform:scale(0.9);
 }
