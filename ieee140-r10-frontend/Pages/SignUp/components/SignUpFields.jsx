@@ -15,6 +15,7 @@ const SignUpFields = ({signUpData,setSignUpData,verifyMail,verifyPassword}) => {
             localStorage.getItem('MemType') === "IEEE Member" && <>
                 <input type="text" placeholder="  IEEE Number" value={signUpData.ieeeMemberNumber} name="ieeeMemberNumber" onChange={handleChangeSignUp}/>
                 {/* <input type="text" placeholder="  IEEE Section" value={signUpData.section} name="section" onChange={handleChangeSignUp}/> */}
+                <div style={{display:"flex",width:"100%",height:"6%"}}>
                 <select name="section" value={signUpData.section} onChange={handleChangeSignUp}>
                     <option value="Australian Capital Territory">Australian Capital Territory</option>
                     <option value="Bangalore Section">Bangalore Section</option>
@@ -77,8 +78,8 @@ const SignUpFields = ({signUpData,setSignUpData,verifyMail,verifyPassword}) => {
                     <option value="Wuhan Section">Wuhan Section</option>
                     <option value="Xian Section">Xian Section</option>
                 </select>
-
-
+                <p>Won't be able to change it later</p>
+                </div>
             </>
             }
             <input type="text" placeholder="  City" value={signUpData.city} name="city" onChange={handleChangeSignUp}/>

@@ -45,7 +45,7 @@ const SignUpButtons = ({signUpData,verifyMail,setAuth,verifyPassword}) => {
     console.log(Object.values(signUpData).includes("") && !verifyMail && !verifyPassword) //&& !verifyCaptcha)
 
     return (
-        <div style={{border:"1px solid",height:"20vh",width:"100%",display:"flex",flexDirection:"column",justifyContent:"center"}}>
+        <div style={{height:"20vh",width:"100%",display:"flex",flexDirection:"column",justifyContent:"center"}}>
             <div style={{height:"50%",alignSelf:"flex-start"}}>
                 <ReCAPTCHA 
                     className='captcha'
@@ -54,7 +54,7 @@ const SignUpButtons = ({signUpData,verifyMail,setAuth,verifyPassword}) => {
                 />
                 {signedUser.isError && <p>Something went Wrong</p>}
             </div>
-            <div style={{height:"50%"}}>
+            <div style={{height:"50%",marginTop:"2%"}}>
                 <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>BACK</Link></button> 
                 <button className="DisabledButton" style={{textDecoration:"none"}} onClick={SignUpFunc} disabled={Object.values(signUpData).includes("") && !verifyMail && !verifyPassword}>{signedUser.isPending?"Loading":"SIGNUP"}</button>
             </div>
