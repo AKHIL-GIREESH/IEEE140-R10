@@ -1,5 +1,5 @@
 import { FAQdata } from "../../mocks/FAQ"
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown,IoIosArrowUp } from "react-icons/io";
 import './FAQ.css'
 import NewReq from "./components/NewReq";
 import { useState } from "react"
@@ -8,7 +8,7 @@ const FAQ = () => {
     const [currentFAQ,setCurrentFAQ] = useState(false)
     return(
         //debugging
-        <div className="fullScreenDivContainer">
+        <div className="fullScreenDivContainer" style={{marginLeft:window.innerHeight>window.innerWidth?null:"3vw"}}>
             <NewReq/>
             <h2>FAQ</h2>
             {
@@ -19,9 +19,9 @@ const FAQ = () => {
                                 <div style={{width:"95%"}}>
                                     {Q}
                                 </div>
-                            <IoIosArrowDown />
+                            {currentFAQ === id ? <IoIosArrowUp/> :<IoIosArrowDown />}
                             </div>
-                            {currentFAQ === id && <div style={{marginTop:"5%"}}>{A}</div>}
+                            {currentFAQ === id && <div style={{marginTop:window.innerHeight>window.innerWidth?"5%":"2%"}}>{A}</div>}
                         </div>
                     )
                 })
