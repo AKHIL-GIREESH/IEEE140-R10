@@ -54,7 +54,7 @@ const SignUpButtons = ({signUpData,verifyMail,setAuth,verifyPassword}) => {
                 />
                 {signedUser.isError && <p>Something went Wrong</p>}
             </div>
-            <div style={{height:"50%",marginTop:"2%"}}>
+            <div style={{height:"50%",marginTop:"2%",width:window.innerHeight>window.innerWidth?"60vw":null}}>
                 <button><Link to="/SignUpChoice" style={{textDecoration:"none",color:"white"}}>BACK</Link></button> 
                 <button className="DisabledButton" style={{textDecoration:"none"}} onClick={SignUpFunc} disabled={Object.values(signUpData).includes("") && !verifyMail && !verifyPassword}>{signedUser.isPending?"Loading":"SIGNUP"}</button>
             </div>
