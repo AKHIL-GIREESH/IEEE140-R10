@@ -36,9 +36,9 @@ const SignUp = () => {
     const setAuth = useSetAuth();
 
     return(
-        <div style={{marginLeft:"25vw"}}>
+        <div style={{textAlign:"center"}}>
             <h1>Create an Account</h1>
-            <div className="glassWrapper-SignUp">
+            <div className="glassWrapper-SignUp" style={window.innerHeight>window.innerWidth?{width:"90vw",marginLeft:"3vw"}:{marginLeft:"25vw"}}>
                 <SignUpFields signUpData={signUpData} setSignUpData={setSignUpData} verifyMail={verifyMail} verifyPassword={verifyPassword}/>
                 <SignUpButtons signUpData={signUpData} setAuth={setAuth} verifyMail={verifyMail} verifyPassword={verifyPassword}/>
             </div>
