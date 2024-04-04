@@ -10,14 +10,31 @@ const Navbar = () => {
         top: 10,
         width: "100vw",
         height: "8vh",
-        border: "1px solid",
-        backgroundColor: "rgba(255,255,255,0.8)",
+        backgroundColor: "#0073DD",
         zIndex: 3,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "1%",
       }}
     >
-      <Link to="/FAQ">FAQ</Link>
-      <a href="#">Leaderboards</a>
-      <Link to="/Login" style={{ color: "black" }}>
+      <a href="#" style={{ color: "white", textDecoration: "none" }}>
+        About
+      </a>
+      <a href="#" style={{ color: "white", textDecoration: "none" }}>
+        Leaderboards
+      </a>
+      <Link to="/FAQ" style={{ color: "white", textDecoration: "none" }}>
+        FAQ
+      </Link>
+      <Link
+        to="/Login"
+        style={{
+          color: "white",
+          textDecoration: "none",
+          justifySelf: "self-end",
+        }}
+      >
         {user === null ? "Login" : user}
       </Link>
     </div>
