@@ -1,15 +1,18 @@
 .landingPgButtons{
     margin-top: 5vh;
+    width: 40vw;
     /* border: 1px solid white; */
-    height: 10vh;
+    height: 8vh;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
+    background-color: #0073DD;
 }
 
 .landingPgButtons button{
-    height: 70%;
-    width:8vw;
-    border-radius: 2em;
+    height: 90%;
+    width:13vw;
+    border-radius: 5px;
     border: none;
     color: white;
     background-color: #0073DD;
