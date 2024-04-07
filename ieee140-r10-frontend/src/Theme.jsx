@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 
 const ThemeContext = createContext(null);
 
 export default function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
