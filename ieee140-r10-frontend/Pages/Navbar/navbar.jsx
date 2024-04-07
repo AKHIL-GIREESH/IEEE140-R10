@@ -1,8 +1,12 @@
+//import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../src/AuthProvider";
+import { useTheme } from "../../src/Theme";
 
 const Navbar = () => {
   const user = useAuth();
+  const { theme } = useTheme();
+  console.log(theme);
   return (
     <div
       style={{
@@ -10,7 +14,7 @@ const Navbar = () => {
         top: 10,
         width: "100vw",
         height: "8vh",
-        backgroundColor: "#0073DD",
+        backgroundColor: theme === "light" ? "#2C8ABF" : "#0073DD",
         zIndex: 3,
         display: "flex",
         alignItems: "center",
