@@ -17,15 +17,45 @@ const Footer = () => {
         backgroundColor: "light" ? "#2C8ABF" : "#0073DD",
       }}
     >
-      <div style={{ marginLeft: "2%", width: "96%", display: "flex" }}>
-        <p style={{ fontSize: "1.2rem", fontWeight: "600", width: "60%" }}>
+      <div
+        style={{
+          marginLeft: "2%",
+          width: "96%",
+          display: "flex",
+          border: "1px solid",
+        }}
+      >
+        <p
+          style={{
+            fontSize: "1.2rem",
+            fontWeight: "600",
+            width: "60%",
+            border: "1px solid",
+            alignSelf: "flex-end",
+          }}
+        >
           HOME | SITEMAP/MORE SITES | CONTACT | ACCESSIBILITY |
           NON-DISCRIMINATION POLICY | IEEE ETHICS REPORTING | IEEE PRIVACY
           POLICY | TERMS
         </p>
-        <div>
-          <p>FOLLOW US</p>
-          <div>
+        <div
+          style={{
+            border: "1px solid",
+            width: "40%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-around",
+          }}
+        >
+          <p style={{ fontSize: "1.2rem", fontWeight: "700" }}>FOLLOW US</p>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              border: "1px solid",
+              width: "60%",
+            }}
+          >
             <AiFillFacebook />
             <FaSquareXTwitter />
             <AiFillInstagram />
