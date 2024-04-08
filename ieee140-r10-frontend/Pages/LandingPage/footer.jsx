@@ -13,7 +13,7 @@ const Footer = () => {
         height: "35vh",
         width: "100%",
         borderTop: "0.5px solid",
-        backgroundColor: "#0073DD",
+        backgroundColor: "light" ? "#2C8ABF" : "#0073DD",
       }}
     >
       <div style={{ marginLeft: "2%", width: "96%", display: "flex" }}>
