@@ -1,5 +1,6 @@
 .glassWrapper-Query,.glassWrapper-FAQ{
-    border: 1px solid #8f8f8f;
+    /* border: 1px solid #8f8f8f; */
+    /* border: 1px solid white; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -8,6 +9,7 @@
     padding: 1.2vh;
     background-color:rgba(250,250,250, 0.1);
     backdrop-filter:blur(10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0,0.2);
 }
 
 .glassWrapper-Query{

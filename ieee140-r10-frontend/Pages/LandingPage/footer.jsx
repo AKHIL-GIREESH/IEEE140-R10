@@ -12,6 +12,7 @@ const Footer = () => {
       style={{
         height: "35vh",
         width: "100%",
+        color: "white",
         borderTop: "0.5px solid",
         backgroundColor: "light" ? "#2C8ABF" : "#0073DD",
       }}
