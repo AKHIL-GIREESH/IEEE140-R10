@@ -14,13 +14,13 @@ const LeaderboardsButtons = ({ setCurrent, current }) => {
   return (
     <div
       className="landingPgButtons"
-      style={{ backgroundColor: "light" ? "#2C8ABF" : "#0073DD" }}
+      style={{ backgroundColor: theme === "light" ? "#2C8ABF" : "#0073DD" }}
     >
       <button
         style={
           current === "INDIVIDUAL"
             ? highlightedStyle
-            : { backgroundColor: "light" ? "#2C8ABF" : "#0073DD" }
+            : { backgroundColor: theme === "light" ? "#2C8ABF" : "#0073DD" }
         }
         onClick={() => {
           setCurrent("INDIVIDUAL");
@@ -35,7 +35,7 @@ const LeaderboardsButtons = ({ setCurrent, current }) => {
             ? { ...highlightedStyle, margin: "0 2.5vw" }
             : {
                 margin: "0 2.5vw",
-                backgroundColor: "light" ? "#2C8ABF" : "#0073DD",
+                backgroundColor: theme === "light" ? "#2C8ABF" : "#0073DD",
               }
         }
         onClick={() => {
@@ -49,7 +49,7 @@ const LeaderboardsButtons = ({ setCurrent, current }) => {
         style={
           current === "SECTION"
             ? highlightedStyle
-            : { backgroundColor: "light" ? "#2C8ABF" : "#0073DD" }
+            : { backgroundColor: theme === "light" ? "#2C8ABF" : "#0073DD" }
         }
         onClick={() => {
           setCurrent("SECTION");
